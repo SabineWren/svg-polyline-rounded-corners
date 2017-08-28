@@ -11,7 +11,7 @@ Output: the contents that get pasted inside 'd='
 
 # Example
 
-starting polyline:
+###starting polyline
 ```
 <polyline class="classes" id="name"
 points="
@@ -25,13 +25,13 @@ points="
 "/>
 ```
 
-usage:
+###usage
 
 node round_corner.js 0 608 15 608 66 668 232 705 268 681 359 698 370 721
 
 
 
-output:
+###output
 ```
 M0,608
 L7.0,608.0
@@ -48,7 +48,7 @@ Q359.0,698.0 362.5,705.2
 
 
 
-end result:
+###end result
 ```
 <polyline class="classes" id="name"
 d="
@@ -65,3 +65,7 @@ d="
 	Q359.0,698.0 362.5,705.2
 "/>
 ```
+
+##Caveat for large border radii
+
+The script works by replacing parts of the line segments with curves: the corner becomes a bezier control point, and the curve endpoints backtrack along the line segments. That means if the line segments are too small for the given border radius, the curve endpoints will be misplaced!

@@ -9,7 +9,7 @@
 	
 	@license-end
 */
-var radius = 8;
+var radius = 12;
 
 var lineToVector = function (p1, p2) {
 	var vector = {
@@ -90,3 +90,5 @@ for (var i = 2; i + 5 < process.argv.length; i += 2) {
 	var path = roundOneCorner(p1, p2, p3);
 	printPath(path);
 }
+var lastArg = process.argv.length - 1;
+console.log("L"+process.argv[lastArg-1]+","+process.argv[lastArg]);
